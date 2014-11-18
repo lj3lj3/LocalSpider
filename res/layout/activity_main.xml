@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal" >
+
+
+        <Button
+            android:id="@+id/bt_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="48dp"
+            android:onClick="onButtonClick"
+            android:text="Start" />
+
+        <Button
+            android:id="@+id/bt_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Stop"
+            android:enabled="false" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_client_list"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/layout_buttons"
+        android:choiceMode="singleChoice" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/layout_send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1" >
+
+        <EditText
+            android:id="@+id/tv_send"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:inputType="text"
+            android:maxLines="3" />
+
+        <Button
+            android:id="@+id/bt_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:onClick="onButtonClick"
+            android:text="@string/send" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sv_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_send"
+        android:layout_below="@id/lv_client_list" >
+
+        <TextView
+            android:id="@+id/tv_message" 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+            <!-- android:background="@drawable/view_border" /> -->
+    </ScrollView>
+
+</RelativeLayout>
